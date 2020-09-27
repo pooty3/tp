@@ -11,10 +11,12 @@ import seedu.address.logic.commands.RemarkCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Remark;
 
-import static java.util.Objects.requireNonNull;
 
 public class RemarkCommandParser implements Parser<RemarkCommand> {
 
+    /**
+     * Parses input arguments and creates a new RemarkCommand object
+     */
     public RemarkCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap = ArgumentTokenizer.tokenize(args,
