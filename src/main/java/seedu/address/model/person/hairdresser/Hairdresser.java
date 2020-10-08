@@ -58,18 +58,6 @@ public class Hairdresser extends Person {
         return Collections.unmodifiableSet(specList);
     }
 
-    /**
-     * Returns true if both hairdressers of the same name have at least one other identity field that is the same.
-     * This defines a weaker notion of equality between two hairdressers.
-     */
-    public boolean isSameHairdresser(Hairdresser otherHairdresser) {
-        if (otherHairdresser == this) {
-            return true;
-        }
-
-        return otherHairdresser != null
-                && (otherHairdresser.getPhone().equals(getPhone()));
-    }
 
     /**
      * Returns true if both hairdressers have the same identity and data fields.

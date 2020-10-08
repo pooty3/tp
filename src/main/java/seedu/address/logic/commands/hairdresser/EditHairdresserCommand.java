@@ -83,7 +83,7 @@ public class EditHairdresserCommand extends Command {
         Hairdresser hairdresserToEdit = lastShownList.get(index.getZeroBased());
         Hairdresser editedHairdresser = createEditedHairdresser(hairdresserToEdit, editHairdresserDescriptor);
 
-        if (!hairdresserToEdit.isSameHairdresser(editedHairdresser) && model.hasHairdresser(editedHairdresser)) {
+        if (!hairdresserToEdit.isSamePerson(editedHairdresser) && model.hasHairdresser(editedHairdresser)) {
             throw new CommandException(MESSAGE_DUPLICATE_HAIRDRESSER);
         }
 

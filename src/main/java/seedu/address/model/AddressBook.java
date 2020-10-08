@@ -7,8 +7,6 @@ import java.util.Objects;
 
 import javafx.collections.ObservableList;
 import seedu.address.model.person.Person;
-import seedu.address.model.person.UniqueClientList;
-import seedu.address.model.person.UniqueHairdresserList;
 import seedu.address.model.person.UniquePersonList;
 import seedu.address.model.person.client.Client;
 import seedu.address.model.person.hairdresser.Hairdresser;
@@ -20,10 +18,10 @@ import seedu.address.model.person.hairdresser.Hairdresser;
  */
 public class AddressBook implements ReadOnlyAddressBook {
 
-    private final UniquePersonList persons;
-    private final UniqueClientList clients;
+    private final UniquePersonList<Person> persons;
+    private final UniquePersonList<Client> clients;
 
-    private final UniqueHairdresserList hairdressers;
+    private final UniquePersonList<Hairdresser> hairdressers;
 
 
     /*
@@ -34,11 +32,11 @@ public class AddressBook implements ReadOnlyAddressBook {
      *   among constructors.
      */
     {
-        persons = new UniquePersonList();
+        persons = new UniquePersonList<>();
 
-        clients = new UniqueClientList();
+        clients = new UniquePersonList<>();
 
-        hairdressers = new UniqueHairdresserList();
+        hairdressers = new UniquePersonList<>();
 
     }
 
@@ -135,7 +133,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void setHairdresser(Hairdresser target, Hairdresser editedHairdresser) {
         requireNonNull(editedHairdresser);
 
-        hairdressers.setHairdresser(target, editedHairdresser);
+        hairdressers.setPerson(target, editedHairdresser);
     }
 
     /**
@@ -182,7 +180,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      * {@code persons} must not contain duplicate persons.
      */
     public void setClients(List<Client> clients) {
-        this.clients.setClients(clients);
+        this.clients.setPersons(clients);
     }
 
 
@@ -212,7 +210,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void setClient(Client target, Client editedClient) {
         requireNonNull(editedClient);
 
-        persons.setPerson(target, editedClient);
+        clients.setPerson(target, editedClient);
     }
 
     /**

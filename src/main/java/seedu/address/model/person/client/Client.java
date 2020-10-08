@@ -58,18 +58,6 @@ public class Client extends Person {
         return Collections.unmodifiableSet(tags);
     }
 
-    /**
-     * Returns true if both patients have the same phone number.
-     * This defines a weaker notion of equality between two clients.
-     */
-    public boolean isSameClient(Client otherClient) {
-        if (otherClient == this) {
-            return true;
-        }
-
-        return otherClient != null
-                && (otherClient.getPhone().equals(getPhone()));
-    }
 
     /**
      * Returns true if both clients have the same identity and data fields.
