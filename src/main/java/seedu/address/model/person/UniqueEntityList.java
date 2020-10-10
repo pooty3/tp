@@ -1,12 +1,18 @@
 package seedu.address.model.person;
 
+import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+
+import java.util.Iterator;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import seedu.address.model.Entity;
 import seedu.address.model.exception.DuplicateElementException;
 import seedu.address.model.exception.ElementNotFoundException;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
-
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
@@ -19,11 +25,10 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
  *
  * @see Person#isSamePerson(Person)
  */
-<<<<<<< HEAD
-public class UniquePersonList<T extends Person> implements Iterable<T> {
+public abstract class UniqueEntityList<T extends Entity> implements Iterable<T> {
 
-    private final ObservableList<T> internalList = FXCollections.observableArrayList();
-    private final ObservableList<T> internalUnmodifiableList =
+    protected final ObservableList<T> internalList = FXCollections.observableArrayList();
+    protected final ObservableList<T> internalUnmodifiableList =
             FXCollections.unmodifiableObservableList(internalList);
 
     /**
@@ -31,7 +36,7 @@ public class UniquePersonList<T extends Person> implements Iterable<T> {
      */
     public boolean contains(T toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSamePerson);
+        return internalList.stream().anyMatch(toCheck :: isSame);
     }
 
     /**
@@ -45,34 +50,27 @@ public class UniquePersonList<T extends Person> implements Iterable<T> {
         }
         internalList.add(toAdd);
     }
-=======
-public class UniquePersonList<T extends Person> extends UniqueEntityList<T> {
-
->>>>>>> master
 
     /**
      * Replaces the person {@code target} in the list with {@code editedPerson}.
      * {@code target} must exist in the list.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
      */
-    public void setPerson(T target, T editedPerson) {
-<<<<<<< HEAD
-        requireAllNonNull(target, editedPerson);
+    public void setElement(T target, T editedEntity) {
+        requireAllNonNull(target, editedEntity);
 
         int index = internalList.indexOf(target);
         if (index == -1) {
-=======
-        try {
-            setElement(target, editedPerson);
-        } catch (ElementNotFoundException ex) {
->>>>>>> master
-            throw new PersonNotFoundException();
-        } catch (DuplicateElementException ex) {
-            throw new DuplicatePersonException();
+            throw new ElementNotFoundException();
         }
+
+        if (!target.isSame(editedEntity) && contains(editedEntity)) {
+            throw new DuplicateElementException();
+        }
+
+        internalList.set(index, editedEntity);
     }
 
-<<<<<<< HEAD
     /**
      * Removes the equivalent person from the list.
      * The person must exist in the list.
@@ -80,19 +78,11 @@ public class UniquePersonList<T extends Person> extends UniqueEntityList<T> {
     public void remove(T toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
-=======
-    @Override
-    public void remove(T toRemove) {
-        try {
-            super.remove(toRemove);
-        } catch (ElementNotFoundException ex) {
->>>>>>> master
             throw new PersonNotFoundException();
         }
     }
 
-<<<<<<< HEAD
-    public void setPersons(UniquePersonList<T> replacement) {
+    public void setElements(UniqueEntityList<T> replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
     }
@@ -101,30 +91,18 @@ public class UniquePersonList<T extends Person> extends UniqueEntityList<T> {
      * Replaces the contents of this list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setPersons(List<T> persons) {
-        requireAllNonNull(persons);
-        if (!personsAreUnique(persons)) {
-=======
-
-    @Override
-    public void add(T toAdd) {
-        try {
-            super.add(toAdd);
-        } catch (DuplicateElementException ex) {
->>>>>>> master
-            throw new DuplicatePersonException();
+    public void setElements(List<T> entities) {
+        requireAllNonNull(entities);
+        if (!entitiesAreUnique(entities)) {
+            throw new DuplicateElementException();
         }
-    }
 
-    public void setPersons(UniquePersonList<T> replacement) {
-        setElements(replacement);
+        internalList.setAll(entities);
     }
 
     /**
-     * Replaces the contents of this list with {@code persons}.
-     * {@code persons} must not contain duplicate persons.
+     * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
-<<<<<<< HEAD
     public ObservableList<T> asUnmodifiableObservableList() {
         return internalUnmodifiableList;
     }
@@ -137,36 +115,26 @@ public class UniquePersonList<T extends Person> extends UniqueEntityList<T> {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof UniquePersonList// instanceof handles nulls
-                        && internalList.equals(((UniquePersonList) other).internalList));
-    }
-=======
-    public void setPersons(List<T> persons) {
-        try {
-            setElements(persons);
-        } catch (DuplicateElementException ex) {
-            throw new DuplicatePersonException();
-        }
+                || (other instanceof UniqueEntityList // instanceof handles nulls
+                && internalList.equals(((UniqueEntityList) other).internalList));
     }
 
+    @Override
+    public int hashCode() {
+        return internalList.hashCode();
+    }
 
->>>>>>> master
-
-
-<<<<<<< HEAD
     /**
      * Returns true if {@code persons} contains only unique persons.
      */
-    private boolean personsAreUnique(List<T> persons) {
-        for (int i = 0; i < persons.size() - 1; i++) {
-            for (int j = i + 1; j < persons.size(); j++) {
-                if (persons.get(i).isSamePerson(persons.get(j))) {
+    private boolean entitiesAreUnique(List<T> entities) {
+        for (int i = 0; i < entities.size() - 1; i++) {
+            for (int j = i + 1; j < entities.size(); j++) {
+                if (entities.get(i).isSame(entities.get(j))) {
                     return false;
                 }
             }
         }
         return true;
     }
-=======
->>>>>>> master
 }

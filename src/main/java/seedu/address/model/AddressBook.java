@@ -19,7 +19,11 @@ import seedu.address.model.person.hairdresser.Hairdresser;
 public class AddressBook implements ReadOnlyAddressBook {
 
     private final UniquePersonList<Person> persons;
+<<<<<<< HEAD
     private final UniquePersonList<Client> clients;
+=======
+    private final UniqueClientList clients;
+>>>>>>> master
 
     private final UniquePersonList<Hairdresser> hairdressers;
 
