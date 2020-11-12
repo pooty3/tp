@@ -19,37 +19,17 @@ Today, many budding hair salons still resort to using pen and paper to keep trac
 
 This application uses a Command Line Interface (CLI); this means that you operate the application by typing commands into a Command Box. If you are fast at typing, you can manage your appointments faster than other Graphical User Interface (GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
 
-The purpose of this user guide is to provide you with an in-depth documentation on how to install and use our application. What are you waiting for? Head on to [Section 2, “Quick Start”](#2-quick-start) .
+The purpose of this user guide is to provide you with an in-depth documentation on how to install and use our application. If this is your first time using this document, we recommend you to first visit [Section 2, “About”](#2-about) to familiarise yourself with the terminology related to this user guide.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## 2. Quick Start
-
-To get started with using **HairStyleX**, you can follow these steps:
-
-1. Ensure you have Java `11` or above installed in your Computer.
-
-1. Download the latest `HairStyleX.jar` from [here](https://github.com/AY2021S1-CS2103T-T15-1/tp/releases).
-
-1. Copy the file to the folder you want to use as the _home folder_ for **HairStyleX**.
-
-1. Double-click the file to start the app. The GUI similar to the one shown below should appear in a few seconds. Note how the app contains some sample data.<br>
-
-1. At the top of the screen, type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
-
-1. Refer to [Section 3.2.3, "Command Syntax and Usage"](#323-command-syntax-and-usage) on how to use commands and [Section 4, "Features"](#4-features) below for details of each command.
-
-![Ui](images/Ui.png)
-
---------------------------------------------------------------------------------------------------------------------
-
-## 3. About
+## 2. About
 
 (Contributed by Tan Yu Li, James)
 
-### 3.1 Structure of this document
+### 2.1 Structure of this document
 
-There are many things you can do with **HairStyleX**. Thus, we have structured this User Guide in such a way that you can easily find what you need. In the next subsection, [Section 3.2, “Reading this Document”](#32-reading-this-document), you will find useful tips on reading this document. It is then followed by [Section 4, “Features”](#4-features) where the four main features of **HairStyleX** and their commands are documented:
+There are many things you can do with **HairStyleX**. Thus, we have structured this user guide in such a way that you can easily find what you need. In the next subsection, [Section 2.2, “Reading this Document”](#22-reading-this-document), you will find useful tips on reading this document. It is then followed by [Section 3, “Quick Start”](#3-quick-start) where installation details will be provided, and then [Section 4, “Features”](#4-features) where the four main features of **HairStyleX** and their commands are documented:
 
 * Client Management
 
@@ -59,17 +39,17 @@ There are many things you can do with **HairStyleX**. Thus, we have structured t
 
 * Shortcut Management
 
-### 3.2 Reading this document
+### 2.2 Reading this document
 
 Before moving on to the next section, you may want to familiarise yourself with some technical terms, symbols and syntax that are used throughout the document. In this subsection, you can find all the information you need to know when reading this document.
 
-#### 3.2.1 Terminology related to the Graphical User Interface (GUI)
+#### 2.2.1 Terminology related to the Graphical User Interface (GUI)
 
 The following figure shows the GUI of **HairStyleX**. It is annotated with the name of the GUI components.
 
 ![UiAnnotation](images/UiAnnotation.png)
 
-#### 3.2.2 General Symbols and Syntax
+#### 2.2.2 General Symbols and Syntax
 
 The table below explains the general symbols and syntax used throughout the document.
 
@@ -81,7 +61,7 @@ The table below explains the general symbols and syntax used throughout the docu
 :bulb: | A light bulb indicates that the enclosed text is a tip.
 
 
-#### 3.2.3 Command Syntax and Usage
+#### 2.2.3 Command Syntax and Usage
 
 Since **HairStyleX** is a CLI application, knowing how to use commands is very important. The following subsection will teach you how to read and use commands in **HairStyleX**. All commands in **HairStyleX** follow similar formats as described below and examples will be provided to help you understand their usage. Examples of commands and their formats will be written in `code-blocks`.
 
@@ -131,8 +111,28 @@ The following four points explain how you can use a command with the provided fo
     
     * Acceptable input 2 (different order as given format): `add_client p/98765432 e/johnd@example.com n/John Doe g/M a/311, Clementi Ave 2, #02-25 t/friends`
     
-With the above information, you can now move on to [Section 4, Features](#4-features) to learn all the features of the application and start using the commands.
+With the above information, you can now move on to [Section 3, "Quick Start"](#3-quick-start) to install our application and [Section 4, "Features"](#4-features) to learn all the features of the application and start using the commands.
     
+--------------------------------------------------------------------------------------------------------------------
+
+## 3. Quick Start
+
+To get started with using **HairStyleX**, you can follow these steps:
+
+1. Ensure you have Java `11` or above installed in your Computer.
+
+1. Download the latest `HairStyleX.jar` from [here](https://github.com/AY2021S1-CS2103T-T15-1/tp/releases).
+
+1. Copy the file to the folder you want to use as the _home folder_ for **HairStyleX**.
+
+1. Double-click the file to start the app. The GUI similar to the one shown below should appear in a few seconds. Note how the app contains some sample data.<br>
+
+1. At the top of the screen, type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+
+1. Refer to [Section 2.2.3, "Command Syntax and Usage"](#223-command-syntax-and-usage) on how to use commands and [Section 4, "Features"](#4-features) below for details of each command.
+
+![Ui](images/Ui.png)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## 4. Features
@@ -159,7 +159,7 @@ All information will be stored automatically after any command that changes the 
 
 **:bulb: Tips for first time users**<br>
 
-If this is your first time using **HairStyleX**, you might notice that this application is pre-filled with sample data. To delete all data, use the `clear` command as stated below.
+If this is your first time using **HairStyleX**, you might notice that this application is pre-filled with sample data. To delete all data, use the `clear` command as [elaborated below](#412-clearing-all-entries--clear).
 
 </div>
 
@@ -175,7 +175,7 @@ The commands in this section allow you to perform operations on the entire syste
 
 #### 4.1.1 Viewing help : `help`
 
-You can use this command to view the user guide, which contains information about all the instructions in **HairStyleX**.
+You can use this command to view the online user guide, which contains information about all the instructions in **HairStyleX**.
 
 <div markdown="block" class="alert alert-info">
 
@@ -195,17 +195,20 @@ In this example, you want to view the user guide to get information about the va
 
 Requesting for help:
 
-1. Type `help` into the *Command Box*.
+1. Type `help` into the *Command Box*, as illustrated below.
+![HelpCommand](images/general-command/HelpCommand.png)
 1. Press `Enter` to execute.
-1. A new window will appear. Click on the `Copy URL` button to copy the URL containing the **HairStyleX** user guide.
+1. A new window will appear as shown below. Click on the `Copy URL` button to copy the URL containing the **HairStyleX** user guide.
 ![HelpOutcome](images/general-command/Help.png)
-1. Open your preferred web browser on your computer and paste the link into the address bar.
-1. Press `Enter` to load the website
+1. Open your preferred web browser on your computer and paste the link into the address bar. In the example below, Google Chrome is used. However, this will work in any other web browser.
+![Chrome](images/general-command/Chrome.png)
+1. Press `Enter` to load the website.
 
 Outcome:
 
-1. Your browser will show the user guide
-1. You can now access information about all commands in **HairStyleX** via the browser
+1. Your browser will now show the user guide of **HairStyleX**.
+![OnlineUG](images/general-command/OnlineUG.png)
+1. You can now access information about all commands in **HairStyleX** via the browser.
 
 </div>
 
@@ -231,7 +234,8 @@ In this example, you want to clear all current data and start with an empty **Ha
 
 Clearing the data:
 
-1. Type `clear` into the *Command Box*.
+1. Type `clear` into the *Command Box*, as illustrated below.
+![ClearCommand](images/general-command/ClearCommand.png)
 1. Press `Enter` to execute.
 
 Outcome:
@@ -265,7 +269,8 @@ In this example, you want to exit **HairStyleX**.
 
 Exiting the application:
 
-1. Type `exit` into the *Command Box*.
+1. Type `exit` into the *Command Box*, as illustrated below.
+![Exit](images/general-command/Exit.png)
 1. Press `Enter` to execute.
 
 Outcome:
@@ -290,25 +295,34 @@ You can use this command to export all hairdressers, clients and appointments fr
 
 **Example:**
 
-In this example, you want to export all current data into CSV files.
+In this example, you want to export all current data into CSV files. Assume you have **HairStyleX.jar** currently stored in a folder called *test*, as illustrated below.
+![Test](images/general-command/Test.png)
+
+<div markdown="block" class="alert alert-info">
+
+:information_source: It is perfectly fine if you only have **HairStyleX.jar** in the *test* folder above. The other files in the above *test* folder will be automatically generated for you as you run the application.
+
+</div>
 
 <div markdown="block" class="alert alert-white">
 
 Exporting to CSV:
 
-1. Type `print` into the *Command Box*.
+1. Type `print` into the *Command Box*, as illustrated below.
+![PrintCommand](images/general-command/PrintCommand.png)
 1. Press `Enter` to execute.
 
 Outcome:
 
 1. The `Result Display` will show a success message.
-1. You can now access the CSV files in the folder `data` that is in the same directory with **HairStyleX.jar**.
-1. There should be three CSV files generated. Namely, *appointments.csv*, *clients.csv*, *hairdressers.csv*.
+![PrintOutcome](images/general-command/Print.png)
+1. You can now access the CSV files in the folder *data* that is in the same directory with **HairStyleX.jar**, as illustrated below.
+![Data](images/general-command/Data.png)
+1. Double click on the folder *data*, and there will be three CSV files generated. Namely, *appointments.csv*, *clients.csv*, *hairdressers.csv*, as illustrated below.
+![CSVFiles](images/general-command/CSVFiles.png)
 1. These files contain the information for `Appointment`s, `Client`s, and `Hairdresser`s respectively. 
 
 </div>
-
-![PrintOutcome](images/general-command/Print.png)
 
 
 ### 4.2 Client Management
