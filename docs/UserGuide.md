@@ -242,10 +242,8 @@ Outcome:
 
 1. The `Result Display` will show a success message.
 1. You will now see that the *Clients Panel*, *Hairdressers Panel*, and *Appointments Panel* are empty.
-
-</div>
-
 ![ClearOutcome](images/general-command/Clear.png)
+</div>
 
 #### 4.1.3 Exiting from the application: `exit`
 
