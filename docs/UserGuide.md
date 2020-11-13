@@ -388,6 +388,8 @@ Adding a new client: <br>
 1. Type `add_client n/John Doe p/98765432 e/johnd@example.com g/M a/311, Clementi Ave 2, #02-25 t/shortHair t/owesMoney` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![AddClientCommand](images/client/AddClientCommand.png)
+
 Outcome: <br>
 
 1. The `Result Display` will show a success message. 
@@ -414,11 +416,15 @@ Listing all your clients:
 1. Type `list_client` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![ListClientCommand](images/client/ListClientCommand.png)
+
 Outcome:
 
 1. The Result Display will show a success message.
 1. You can now see all your clients in the *Client Panel*.
 </div>
+
+![ListClientOutcome](images/client/ListClientOutcome.png)
 
 #### 4.2.4 Editing a client : `edit_client`
 
@@ -463,6 +469,8 @@ Editing a new client:
 1. Type `edit_client 1 p/91234567 e/yy@example.com` into the *Command box*.
 1. Press `Enter` to execute.
 
+![EditClientCommand](images/client/EditClientCommand.png)
+
 Outcome:
 
 1. The `Result Display` will show a success message. 
@@ -501,6 +509,8 @@ Delete client: <br>
 1. Type `delete_client 2` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![DeleteClientCommand](images/client/DeleteClientCommand.png)
+
 Outcome: <br>
 
 1. The `Result Display` will show a success message.
@@ -538,6 +548,8 @@ Filter clients: <br>
 
 1. Type `filter_client ivan` into the *Command Box*.
 1. Press `Enter` to execute.
+
+![FilterClientCommand](images/client/FilterClientCommand.png)
 
 Outcome: <br>
 
@@ -610,14 +622,16 @@ Adding a new hairdresser: <br>
 1. Type `add_hairdresser n/Helen Lim p/82716252 e/helenlim@example.com g/F ti/Senior Stylist s/Perm s/Color` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![AddHairdresserStep](images/hairdresser/AddHairdresserStep.png)
+
 Outcome: <br>
 
 1. The `Result Display` will show a success message. 
 1. You can now see the hairdresser's information in the *Hairdressers Panel*.
 
-</div>
-
 ![AddHairdresserOutcome](images/hairdresser/AddHairdresserOutcome.png)
+
+</div>
 
 #### 4.3.3 Listing all hairdressers : `list_hairdresser`
 
@@ -687,14 +701,16 @@ Editing a new hairdresser: <br>
 1. Type `edit_hairdresser 3 p/91234567 e/yy@example.com` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![EditHairdresserStep](images/hairdresser/EditHairdresserStep.png)
+
 Outcome: <br>
 
 1. The `Result Display` will show a success message. 
 1. You can now see the updated hairdresser's information in the *Hairdressers Panel*.
 
-</div>
-
 ![EditHairdresserOutcome](images/hairdresser/EditHairdresserOutcome.png)
+
+</div>
 
 #### 4.3.5 Deleting a hairdresser : `delete_hairdresser`
 
@@ -725,13 +741,15 @@ Delete hairdresser: <br>
 1. Type `delete_hairdresser 3` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![DeleteHairdresserStep](images/hairdresser/DeleteHairdresserStep.png)
+
 Outcome: <br>
 
 1. The `Result Display` will show a success message.
 
-</div>
-
 ![DeleteHairdresserOutcome](images/hairdresser/DeleteHairdresserOutcome.png)
+
+</div>
 
 #### 4.3.6 Filtering hairdressers : `filter_hairdresser`
 
@@ -763,14 +781,16 @@ Filter hairdresser: <br>
 1. Type `filter_hairdresser bella` into the *Command Box*.
 1. Press `Enter` to execute.
 
+![FilterHairdresserStep](images/hairdresser/FilterHairdresserStep.png)
+
 Outcome: <br>
 
 1. The `Result Display` will show a success message.
 1. You can now see the filtered hairdresser's information in the *Hairdressers Panel*, with hairdressers named `bella` displayed in the list.
 
-</div>
-
 ![FilterHairdresserOutcome](images/hairdresser/FilterHairdresserOutcome.png)
+
+</div>
 
 ### 4.4 Appointment Management
 
